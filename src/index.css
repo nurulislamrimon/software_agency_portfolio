@@ -1,0 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", "Inter", sans-serif;
+  
+  --color-brand-50: #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-500: #3b82f6;
+  --color-brand-600: #2563eb;
+  --color-brand-700: #1d4ed8;
+  --color-brand-900: #1e3a8a;
+  
+  --animate-infinite-scroll: infinite-scroll 40s linear infinite;
+  
+  @keyframes infinite-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+
+  body {
+    @apply bg-white text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900 overflow-x-hidden;
+  }
+}
+
+/* Custom premium styles */
+.gradient-mask {
+  mask-image: linear-gradient(to right, transparent, white 20%, white 80%, transparent);
+}
+
+.sleek-badge {
+  @apply inline-flex items-center px-3 py-1 bg-blue-50 text-blue-700 rounded-full text-[10px] sm:text-xs font-bold tracking-wider uppercase w-fit border border-blue-100/50 shadow-sm;
+}
+
+.sleek-btn-primary {
+  @apply px-6 sm:px-8 py-3.5 sm:py-4 bg-blue-600 text-white rounded-[18px] font-bold shadow-xl shadow-blue-200/50 hover:bg-blue-700 active:scale-[0.98] transition-all duration-200 cursor-pointer text-xs sm:text-sm;
+}
+
+.sleek-btn-secondary {
+  @apply px-6 sm:px-8 py-3.5 sm:py-4 bg-white border border-slate-200 text-slate-700 rounded-[18px] font-bold hover:bg-slate-50 active:scale-[0.98] transition-all duration-200 cursor-pointer text-xs sm:text-sm;
+}
+
+.sleek-card {
+  @apply bg-white border border-slate-100/80 rounded-[24px] p-6 shadow-sm hover:shadow-2xl hover:shadow-blue-200/10 transition-all duration-300;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.glass-card-hover {
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card-hover:hover {
+  transform: translateY(-4px);
+  background: rgba(255, 255, 255, 0.85);
+  border-color: rgba(59, 130, 246, 0.25);
+  box-shadow: 0 20px 40px -15px rgba(59, 130, 246, 0.1);
+}
+
+.grid-glow {
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
+  filter: blur(40px);
+  pointer-events: none;
+}

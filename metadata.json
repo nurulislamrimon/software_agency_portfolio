@@ -1,0 +1,6 @@
+{
+  "name": "SaaS Software Agency Portfolio",
+  "description": "A premium, minimalist, and interactive SaaS portfolio website for a modern software engineering agency.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
